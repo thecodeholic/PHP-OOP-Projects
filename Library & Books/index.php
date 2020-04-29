@@ -15,7 +15,7 @@ $author2->addBook('Luck', 12);
 
 $book = $library->search('Martin Eden'); // This must return instance of the book
 $author = $book->getAuthor(); // This must return instance of the Author class
-echo $author->getName(); // This must print "Jack London"
+echo $author->getName().PHP_EOL; // This must print "Jack London"
 
 $library->print();
 /*

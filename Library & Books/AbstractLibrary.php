@@ -13,9 +13,38 @@ abstract class AbstractLibrary
     /**
      * @var Author[]
      */
-    private $authors = [];
+    protected $authors = [];
 
-     // TODO Generate getters and setters of properties
+    public function addAuthorInstance(Author $author)
+    {
+        $this->authors[] = $author;
+    }
+
+    public function findAuthor($authorName)
+    {
+        foreach ($this->authors as $author) {
+            if ($author->getName() === $authorName){
+                return $author;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * @return \Author[]
+     */
+    public function getAuthors(): array
+    {
+        return $this->authors;
+    }
+
+    /**
+     * @param \Author[] $authors
+     */
+    public function setAuthors(array $authors): void
+    {
+        $this->authors = $authors;
+    }
 
     /**
      * Method accepts the name of the author, creates instance of the Author class,
@@ -49,7 +78,7 @@ abstract class AbstractLibrary
      * @param string $bookName
      * @return Book
      */
-    abstract public function search(string $bookName): Book;
+    abstract public function search(string $bookName): ?Book;
 
     /**
      * This method must print every author and for each author all its books in the following format
