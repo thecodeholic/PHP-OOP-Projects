@@ -10,7 +10,7 @@ require_once __DIR__ . '/PasswordInput.php';
 $form = new Form();
 $form->addElement(new TextInput('firstname', 'First name'));
 $form->addElement(new TextInput('email', 'Email'));
-$form->addElement(new TextInput('password', 'Password'));
+$form->addElement(new PasswordInput('password', 'Password'));
 $form->addElement(new Button("Submit"));
 ?>
 
