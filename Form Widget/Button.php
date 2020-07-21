@@ -16,7 +16,6 @@ class Button extends HtmlElement
      */
     public function __construct(string $text, array $attributes = [])
     {
-        parent::__construct($attributes);
         $this->text = $text;
     }
 
