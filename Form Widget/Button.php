@@ -7,22 +7,21 @@
 class Button extends HtmlElement
 {
     public string $text;
-    public string $type;
 
     /**
      * Button constructor.
      *
      * @param string $text
-     * @param string $type
+     * @param array  $attributes
      */
-    public function __construct(string $text, string $type = 'button')
+    public function __construct(string $text, array $attributes = [])
     {
+        parent::__construct($attributes);
         $this->text = $text;
-        $this->type = $type;
     }
 
     public function render(): string
     {
-        return sprintf('<button type="%s">%s</button>', $this->type, $this->text);
+        return sprintf('<button>%s</button>', $this->text);
     }
 }
